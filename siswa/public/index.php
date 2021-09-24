@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="icon" href="tentor/assets/logo.jpg">
+    <link rel="icon" href="assets/logo.jpg">
     <title>OsingCourse</title>
 </head>
 <body>
     <nav class="navbar shadow-lg navbar-expand-lg navbar-dark" style="background-color:#6F69AC ">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/"><img class="rounded-circle shadow-lg" src="tentor/assets/logo.jpg" width="35" alt="OsingCourse"> &nbsp; OsingCourse</a>
+            <a class="navbar-brand fw-bold" href="/"><img class="rounded-circle shadow-lg" src="assets/img/logo.jpg" width="35" alt="OsingCourse"> &nbsp; OsingCourse</a>
         <div class="float-end">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
                     <p class="fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt doloribus esse inventore sequi aspernatur veniam non numquam enim dolorem dignissimos sed, beatae magni! Quam ab, cupiditate amet excepturi eveniet neque perferendis. Ad saepe ipsam deleniti neque repellat, qui perspiciatis harum.</p>
                 </div>
                 <div class=" text-center col-md-6 mt-5 mb-5">
-                    <img src="tentor/assets/belajar.jpg" width="500" alt="">
+                    <img src="assets/belajar.jpg" width="500" alt="">
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="card" style="width: 15rem;">
-                                <img src="tentor/assets/belajar.jpg" class="card-img-top" alt="paket kelas">
+                                <img src="assets/img/belajar.jpg" class="card-img-top" alt="paket kelas">
                                 <div class="card-body text-center">
                                   <h5 class="card-title">Card title</h5>
                                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card" style="width: 15rem;">
-                                <img src="tentor/assets/belajar.jpg" class="card-img-top" alt="paket kelas">
+                                <img src="assets/img/belajar.jpg" class="card-img-top" alt="paket kelas">
                                 <div class="card-body text-center">
                                   <h5 class="card-title">Card title</h5>
                                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card" style="width: 15rem;">
-                                <img src="tentor/assets/belajar.jpg" class="card-img-top" alt="paket kelas">
+                                <img src="assets/img/belajar.jpg" class="card-img-top" alt="paket kelas">
                                 <div class="card-body text-center">
                                   <h5 class="card-title">Card title</h5>
                                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card" style="width: 15rem;">
-                                <img src="tentor/assets/belajar.jpg" class="card-img-top" alt="paket kelas">
+                                <img src="assets/img/belajar.jpg" class="card-img-top" alt="paket kelas">
                                 <div class="card-body text-center">
                                   <h5 class="card-title">Card title</h5>
                                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
