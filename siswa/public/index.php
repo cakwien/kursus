@@ -164,8 +164,20 @@
 
     <div class="container-fluid bg-success">
         <div class="container">
-            <div class="col-md-12">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam asperiores veniam ab distinctio mollitia voluptatibus nisi animi reprehenderit nemo at aperiam neque est optio, expedita exercitationem, eveniet ipsam, voluptatem natus suscipit nulla officia doloremque aut quae. Perspiciatis officia deleniti culpa, aliquid impedit adipisci facere? Deleniti itaque saepe at explicabo corporis?
+            <div class="row">
+                <div class="col-md-4 mt-4 mb-4">
+                    <article>
+                        <h4>Tryout Bersama OsingCourse</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reprehenderit totam facilis corporis vitae, repudiandae sit adipisci possimus quisquam suscipit tenetur esse beatae quis ut id autem dolores minus expedita voluptate officia tempore aut impedit sint quod. Esse nisi corporis, dignissimos consequatur sit similique saepe facere laboriosam quod fugiat dolorum.</p>
+                    </article>
+                </div>
+                <div class="col-md-8 mt-4 mb-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                            test
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
