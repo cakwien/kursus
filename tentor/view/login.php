@@ -33,15 +33,16 @@
                     <div class="card-body">
                         <h4>OsingCourse Login <span class="text-success">Tentor</span>
                         </h4>
+                        <?=$pesan?>
                         <form action="" method="post">
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" Placeholder="Username">
+                                <input type="text" class="form-control" name="email" Placeholder="Username">
                             </div>
                             <div class="form-group mt-2">
-                                <input type="password" class="form-control"name="password" Placeholder="Password">
+                                <input type="password" class="form-control" name="password" Placeholder="Password">
                             </div>
                             <div class="d-grid gap-2 mt-3">
-                                <button class="btn btn-primary rounded-pill fw-bold" type="button">Login</button>
+                                <button type="submit" class="btn btn-primary rounded-pill fw-bold">Login</button>
                             </div>
                         </form>
                     </div>

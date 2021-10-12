@@ -18,7 +18,9 @@ class user{
         $q=mysqli_query($con,"select * from siswa where id = '$id'");
         $dt = mysqli_fetch_array($q);
         return $dt;
-    }                                                                                                                                                                                          
+    }    
+    
+    
 
     
 }
