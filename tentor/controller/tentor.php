@@ -73,9 +73,13 @@
             include('view/index.php');
         }
 
+        elseif($p=="editmateri")
+        {
+            include('view/editmateri.php');
+        }
+
         elseif($p=="user")
         {
-
             if (!empty($_POST['nama']))
             {
                 $id_tentor = $tnt['id_tentor'];
@@ -96,4 +100,3 @@
     {
         include('view/index.php');
     }
-?>  
