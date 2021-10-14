@@ -53,9 +53,9 @@
                   <a class="nav-link ms-2 me-2" href="#">Apa Kata Mereka?</a>
                </li>
             </ul>
-           <span class="text">
-              <a href="#" class="btn btn-outline-warning rounded-pill ps-3 pe-3">Login</a>
-           </span>
+            <span class="text">
+               <a href="#" class="btn btn-outline-warning rounded-pill ps-3 pe-3">Login</a>
+            </span>
          </div>
       </div>
    </nav>
@@ -112,8 +112,59 @@
    </div>
 
    <div class="container">
-      <div class="col-md-6">
-         
+      <div class="row mt-3">
+         <div class="col-md-6 mb-3">
+            <div class="card rounded shadow-lg border-0">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <img src="assets/img/materi1.png" width="100" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 mb-3">
+            <div class="card rounded shadow-lg border-0">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <img src="assets/img/siswa1.png" width="100" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 mb-3">
+            <div class="card rounded shadow-lg border-0">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <img src="assets/img/zoom1.png" width="100" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 mb-3">
+            <div class="card rounded shadow-lg border-0">
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <img src="assets/img/materi1.png" width="100" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+
+         </div>
       </div>
    </div>
 
