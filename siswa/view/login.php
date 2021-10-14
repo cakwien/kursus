@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="container-fluid" style="background-color:#512D6D; height: 200px;">
+    <div class="container-fluid" style="background-color:#2C2E43; height: 200px;">
     </div>
 
     <div class="container">

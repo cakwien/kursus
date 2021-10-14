@@ -1,29 +1,22 @@
 <?php
-// KONEKSI DATABASE================================
-// INISIALISASI DATABASE TERLEBIH DAHULU===========
-$dbname = 'kursus';
-$dbuser = 'root';
-$dbhost = 'localhost';
-$dbpass = '';
-// ================================================
 
-// VARIABLE KONEKSI DATABASE=======================
-$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-// ================================================
+    //KONEKSI KE DATABASE
+    $hostDB			= "localhost";
+    $usernameDB		= "root";
+    $passwordDB		= "";
+    $namaDB			= "kursus";
 
-// CEK KONEKSI DATABASE============================
-if (mysqli_connect_error())
-{
-    echo "Gagal Koneksi";
-    die();
-}
-// ================================================
+    $con = mysqli_connect($hostDB,$usernameDB,$passwordDB,$namaDB);
 
+    //CEK KONEKSI
+    if(mysqli_connect_error())
+    {
+        echo "GAGAL";
+        die;
+    }
 
-// SET TIMEZONE====================================
-date_default_timezone_set('Asia/Jakarta');
-// ================================================
+    //SET TIMEZONE
+    date_default_timezone_set('Asia/Jakarta');
 
-
-
-?>
+    //TGLINDO
+//    

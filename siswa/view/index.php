@@ -1,3 +1,13 @@
+<?php 
+
+  session_start();
+if (empty($_SESSION['email']))
+{
+  header('locatian:?p=login');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
