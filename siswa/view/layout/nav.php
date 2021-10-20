@@ -7,19 +7,30 @@
      <div class="collapse navbar-collapse" id="navbarNav">
        <ul class="navbar-nav ms-5">
          <li class="nav-item">
-           <a class="nav-link ps-3 pe-3" href="#">Beranda</a>
+           <a class="nav-link ps-3 pe-3" href="?p=home">Beranda</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link ps-3 pe-3" href="#">Kelasku</a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link ps-3 pe-3" href="#">Kelas Privat</a>
+           <a class="nav-link ps-3 pe-3" href="?p=kelas">Kelasku</a>
          </li>
          <li class="nav-item">
            <a class="nav-link ps-3 pe-3" href="#">Try Out</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link ps-3 pe-3" href="#">Akun</a>
+           <a class="nav-link ps-3 pe-3" href="#">Pencapaian</a>
+         </li>
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Daftar Baru
+           </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+             <li><a class="dropdown-item" href="?p=daftarkelas">Kelas Kursus</a></li>
+             <li><a class="dropdown-item" href="?p=daftarprivat">Kursus Privat</a></li>
+             <li><a class="dropdown-item" href="#">Tryout</a></li>
+           </ul>
+         </li>
+
+         <li class="nav-item">
+           <a class="nav-link ps-3 pe-3" href="?p=account">Pengaturan Akun</a>
          </li>
 
        </ul>

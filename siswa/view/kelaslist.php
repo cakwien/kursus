@@ -1,30 +1,72 @@
-<div class="row rounded" style="background-color:#595260;">
-   <div class="col-md-12 mt-3 pb-5">
-      <h3 class="ms-3 text-light">Daftar Kelas Kursus</h3>
-
+<div class="row">
+   <div class="col-md-12">
+      <h5>Kelas Kursus Saya</h5>
    </div>
 </div>
 
 <div class="row">
    <div class="col-md-12">
-      <div class="card mecungul1 border-0 shadow-lg">
+      <div class="card border-primary">
          <div class="card-body">
+            <?php
+            $listkelas = $kelas->all($con, $id_siswa);
+            foreach ($listkelas as $lk) {
+               $jumlahmateri = $materi->jumlahMateriByKelas($con, $lk['id_kelas']);
+            ?>
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="card shadow-sm">
+                        <div class="card-header fw-bold">
+                           <?= $lk['nm_kelas'] ?>
+                           <a title="Masuk kelas" href="?p=timelinekelas&kel=<?=$lk['id_kelas']?>" class="btn btn-sm btn-primary rounded-circle float-end">
+                              <i class="bi-arrow-right-circle"></i>
+                           </a>
+                        </div>
+                        <div class="card-body">
+
+                           <span title="Jumlah Materi" class="btn btn-sm bg-info text-light rounded-pill"><i class="bi-book"></i> <?= $jumlahmateri[0] ?></span>
+                           <span title="Jumlah Anggota Kelas" class="btn btn-sm text-light rounded-pill" style="background-color:navy;"><i class="bi-person"></i> <?= $jumlahmateri[0] ?></span>
+
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            <?php } ?>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<div class="row">
+   <div class="col-md-12 mt-3">
+      <h5>Kursus Privat</h5>
+   </div>
+</div>
+
+<div class="row">
+   <div class="col-md-12">
+      <div class="card">
+         <div class="card-body">
+
             <div class="row">
                <div class="col-md-3">
-                  <div class="card shadow-sm">
-                     <div class="card-body">
-                        <span class="d-block p-2 fw-bold rounded text-light text-center" style="background-color:#AF2D2D;">Nama Kelas</span>
-                        Tentor :Ade Setiyawan
-
+                  <div class="card">
+                     <div class="card-header fw-bold">
+                        Privat Matematika
+                        <a href="#" class="btn btn-sm btn-primary rounded-circle float-end">
+                           <i class="bi-arrow-down-right-circle"></i>
+                        </a>
                      </div>
-                     <div class="card-footer">
-                        <a href="" class="btn btn-sm btn-secondary float-end"><i class="bi-three-dots"></i></a>
-                        <a href="" class="btn btn-sm btn-primary"><i class="bi-search"></i></a>
-                        <a href="" class="btn btn-sm btn-primary"><i class="bi-search"></i></a>
+                     <div class="card-body">
+                        test
                      </div>
                   </div>
                </div>
             </div>
+
          </div>
       </div>
    </div>

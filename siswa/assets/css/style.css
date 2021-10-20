@@ -7,6 +7,17 @@
 .mecungul3{
   margin-top : -55px;
 }
+.mecungul{
+  margin-top : -25px;
+}
+
+.oyen{
+  background-color:orange;
+}
+
+.orange:hover{
+  background-color:orangered;
+}
 
 
 .biruatas{

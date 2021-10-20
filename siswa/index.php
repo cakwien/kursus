@@ -1,6 +1,8 @@
 <?php
 
     include('config/db.php');
+
+    include('mod/rahasia.php');
     
     include('mod/user.php');
     $user = new user;

@@ -15,11 +15,51 @@ if (!empty($_GET['p'])) {
         include('view/login.php');
     } 
 
+    elseif ($p=="ceklogin")
+    {
+        session_start();
+        if (empty($_SESSION['email']))
+        {
+            header('location:?p=login');
+        }else
+        {
+            $emailaktif = $_SESSION['email'];
+            header('location:?p=home');
+        }
+    }
+
+    // elseif ($p=="daftarkelas")
+    // {
+    //     include('view/index.php');
+    // }
+
+    // elseif ($p=="daftarprivat")
+    // {
+    //     include('view/index.php');
+    // }
+    
+
     elseif ($p == "logout") {
         session_start();
         session_destroy();
         header('location:?p=login');
     }
+
+    elseif($p=="account")
+    {
+        include('view/index.php');
+    }
+
+    elseif($p=="daftarkelas")
+    {
+        
+        
+        include('view/index.php');
+    }
+
+
+
+
 
     elseif ($p=="home")
     {
@@ -30,7 +70,8 @@ if (!empty($_GET['p'])) {
         include('view/index.php');
     }
 
-
-
-
+}
+else
+{
+    include('view/index.php');
 }

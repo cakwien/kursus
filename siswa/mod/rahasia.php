@@ -40,3 +40,21 @@ function hal($hal)
 	}
 	return $oke;
 }
+
+function disedit()
+{
+	if (!empty($_GET['edit'])){
+		if ($_GET['edit'] == "true") {
+			echo "";
+		} else {
+			echo "disabled";
+		}
+	}else
+	{
+		echo "disabled";
+	}
+	
+}
+
+
+

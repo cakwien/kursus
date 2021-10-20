@@ -8,17 +8,19 @@ class user{
         if (!empty($dtcek[0]))
         {
             session_start();
-            $_SESSION['id'] = $dtcek['id'];
-            header('location:?p=home');
+            $_SESSION['id'] = $dtcek['id_siswa'];
+            $_SESSION['email'] = $email;
+            header('location:?p=ceklogin');
+           
         }else   
         {
             header('location:?p=login&log=fail');
         }
     }
 
-    function index($con,$id) // Munculkan data siswa berdasarkan id siswa
+    function index($con,$email) // Munculkan data siswa berdasarkan id siswa
     {
-        $q=mysqli_query($con,"select * from siswa where id = '$id'");
+        $q=mysqli_query($con,"select * from siswa where email = '$email'");
         $dt = mysqli_fetch_array($q);
         return $dt;
     }    
