@@ -20,12 +20,22 @@
          </li>
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-             Daftar Baru
+             Pendaftaran
            </a>
            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
              <li><a class="dropdown-item" href="?p=daftarkelas">Kelas Kursus</a></li>
              <li><a class="dropdown-item" href="?p=daftarprivat">Kursus Privat</a></li>
              <li><a class="dropdown-item" href="#">Tryout</a></li>
+             <li><a class="dropdown-item" href="?p=tagihan">Tagihan Pembayaran</a></li>
+           </ul>
+         </li>
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Tagihan
+           </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+             <li><a class="dropdown-item" href="?p=tagihan">Tagihan</a></li>
+             <li><a class="dropdown-item" href="?p=riwayat-pembayaran">Riwayat Pembayaran</a></li>
            </ul>
          </li>
 

@@ -9,6 +9,9 @@ if (!empty($p))
   elseif ($p == "daftarkelas") {require_once('view/daftarkelas.php');}
   elseif ($p == "daftarprivat") {require_once('view/daftarprivat.php');}
   elseif ($p == "account") {require_once('view/account.php');}
+  elseif ($p == "konfirmasi") {require_once('view/konfirmdaftar.php');}
+  elseif ($p == "tagihan") {require_once('view/bill.php');}
+  elseif ($p == "riwayat-pembayaran") {require_once('view/history_pembayaran.php');}
 }else
 {
   header('location:?p=home');

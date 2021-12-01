@@ -66,6 +66,18 @@ if (!empty($_GET['p'])) {
         include('view/index.php');
     }
 
+    elseif($p=="timelinekelas")
+    {
+        if (!empty($_GET['kel']))
+        {
+            $id_kelas = $_GET['kel'];
+            $datakelas = $kelas->index($con, $id_kelas);
+            $datatentor = $tentor->indexByKelas($con, $id_kelas);
+        }
+
+        include('view/index.php');
+    }
+
     else{
         include('view/index.php');
     }

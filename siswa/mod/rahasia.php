@@ -56,5 +56,40 @@ function disedit()
 	
 }
 
+function cekwaktu($sekarang,$jadwal)
+{
+	$tenggang = $jadwal + 3600;
+
+	if ($sekarang > $jadwal)
+	{
+		if ($sekarang <= $tenggang)
+		{
+			$sts = '<span class="bg-info rounded-pill float-end text-light p-1 pe-2 "><i class="bi-check"></i> Sedang Berlangsung</span>';
+		}else
+		{
+			$sts = '<span class="bg-success rounded-pill float-end text-light p-1 pe-2 "><i class="bi-check"></i> Selesai</span>';
+		}
+	}else
+	{
+		$sts= '<span class="bg-warning rounded-pill float-end text-light p-1 pe-2 "><i class="bi-check"></i> Menunggu</span>';
+	}
+	return $sts;
+}
+
+function cekwaktutbl($sekarang, $jadwal)
+{
+	$tenggang = $jadwal + 3600;
+
+	if ($sekarang > $jadwal) {
+		if ($sekarang <= $tenggang) {
+			$sts = 'btn btn-sm btn-info';
+		} else {
+			$sts = 'btn btn-sm btn-secondary disabled';
+		}
+	} else {
+		$sts = 'btn btn-sm btn-warning disabled';
+	}
+	return $sts;
+}
 
 

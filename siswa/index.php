@@ -7,6 +7,9 @@
     include('mod/user.php');
     $user = new user;
 
+    include('mod/tentor.php');
+    $tentor = new tentor;
+
     include ('mod/kelas.php');
     $kelas = new kelas;
 
