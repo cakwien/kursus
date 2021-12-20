@@ -52,13 +52,23 @@ if (!empty($_GET['p'])) {
 
     elseif($p=="daftarkelas")
     {
+
+        $daftarkelasaktif = $harga->allaktif($con); 
         
         
         include('view/index.php');
     }
 
-
-
+    elseif($p=="konfirmasi")
+    {
+        if(!empty($_GET['daftar']))
+        {
+            $idharga = bukarhs(bukarhs($_GET['daftar']));
+            $hargakelas = $harga->index($con,$idharga); // harga kelas
+        }
+        
+        include('view/index.php');
+    }
 
 
     elseif ($p=="home")
@@ -76,6 +86,23 @@ if (!empty($_GET['p'])) {
         }
 
         include('view/index.php');
+    }
+
+    elseif($p=="daftar")
+    {
+        if (!empty($_POST['daftar']))
+        {
+            $nama = $_POST['nama'];
+            $alamat=$_POST['alamat'];
+            $tgl_lahir = $_POST['tgl_lahir'];
+            $no_hp = $_POST['no_hp'];
+            $asal_sekolah = $_POST['asal_sekolah'];
+            $email = $_POST['email'];
+            $password1 = $_POST['password1'];
+            $password2 = $_POST['password2'];
+            $input=$user->daftar($con, $nama, $alamat, $tgl_lahir, $no_hp, $email, $asal_sekolah, $password1, $password2);
+        }
+        include('view/daftarsiswa.php');
     }
 
     else{

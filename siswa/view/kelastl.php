@@ -1,8 +1,8 @@
 <div class="row rounded" style="background-color:#4B3869;">
   <div class="col-md-12 p-3">
     <h3 class="ms-3 text-light">Kelas <?= $datakelas['nm_kelas'] ?></h3>
-    <?php foreach($datatentor as $tent){
-      echo '<h5 class="ms-3 text-light"><i class="bi-person"></i> '.$tent['nm_tentor'].'</h5>';
+    <?php foreach ($datatentor as $tent) {
+      echo '<h5 class="ms-3 text-light"><i class="bi-person"></i> ' . $tent['nm_tentor'] . '</h5>';
     } ?>
 
   </div>
@@ -37,9 +37,16 @@
                   <p><?= $lm['keterangan'] ?></p>
 
                   <span class=" p-1 ps-2 pe-2 rounded text-light" style="background-color:navy" title="Jadwal"><i class="bi-calendar2"></i> <?= tgl_indo($lm['jadwal']) . " <i class='bi-clock'></i> " . date('H:i', $lm['jadwal']) ?></span>
-                  <?= cekwaktu(time(), $lm['jadwal'])?>
-                  
-                  <a class="<?= cekwaktutbl(time(), $lm['jadwal'])?> float-end me-2" href="">Link Zoom</a>
+                  <?php
+                    $aktif = '<a href="#" class="btn btn-sm btn-primary float-end me-1"><i class="bi-camera-video"></i> Masuk</a>';
+                    $disabled = '<a href="#" class="btn btn-sm btn-secondary float-end me-1"><i class="bi-check"></i> Selesai</a>';
+                    $wait = '<a href="#" class="btn btn-sm btn-warning float-end me-1"><i class="bi-hourglass-split"></i> Menunggu</a>';
+                    $sekarang = time();
+                    $tbl = $materi->cekwaktutbl($sekarang, $lm['jadwal'], $aktif, $disabled, $wait);
+                    echo $tbl;
+                  ?>
+
+
                 </div>
               </div>
             </div>

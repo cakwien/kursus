@@ -39,7 +39,7 @@ $tnt = cekSession($con, $user);
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Kelas</a></li>
-                <li><a class="dropdown-item" href="#">Privat</a></li>
+                <li><a class="dropdown-item" href="?to=privat">Privat</a></li>
               </ul>
             </li>
 
@@ -74,11 +74,6 @@ $tnt = cekSession($con, $user);
   <script>
     toastr["success"]("Are you the six fingered man?");
   </script>
-
-
-
-
-
 
 
   <script>

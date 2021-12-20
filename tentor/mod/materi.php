@@ -12,6 +12,17 @@
             return $list;
         }
 
+        function terbaru($con,$id_tentor)
+        {
+            $list = array();
+            $q=mysqli_query($con,"Select * from materi join ampu on materi.id_ampu = ampu.id_ampu where ampu.id_tentor = '$id_tentor'");
+            while($dt=mysqli_fetch_array($q))
+            {
+                $list[] = $dt;
+            }
+            return $list;
+        }
+
         function jumlah($con,$id_ampu)
         {
             $q=mysqli_query($con,"select count(id_materi) from materi where id_ampu = '$id_ampu'");

@@ -35,6 +35,7 @@
 
         elseif ($p == "home")
         {
+            
             include('view/index.php');
         }
 
@@ -45,7 +46,7 @@
                 $id_ampu = bukarhs($_GET['amp']);
                 $dt=$kelas->indexByAmpu($con,$id_ampu);
                 $nm_kelas = $dt['nm_kelas'];
-                $jenjang = $dt['jenjang'];
+                // $jenjang = $dt['jenjang'];
                 $listmateri = $materi->all($con,$id_ampu);
                 $listsiswa = $siswa->allByAmpu($con,$id_ampu);
 
@@ -93,6 +94,11 @@
 
           
 
+            include('view/index.php');
+        }
+
+        elseif($p=="privat")
+        {
             include('view/index.php');
         }
         

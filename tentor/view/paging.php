@@ -7,6 +7,8 @@ if (!empty($p)) {
         require_once('kelas_detail.php');
     } elseif ($p == "user") {
         require_once('useraccount.php');
+    } elseif ($p == "privat") {
+        require_once('privat_detail.php');
     }
 } else {
     header('location:?to=home');

@@ -1,13 +1,10 @@
-<?php 
+<?php
 
 session_start();
-if (empty($_SESSION['email']))
-{
+if (empty($_SESSION['email'])) {
   header('location:?p=login');
-}
-else
-{
-  $siswaaktif = $user->index($con,$_SESSION['email']);
+} else {
+  $siswaaktif = $user->index($con, $_SESSION['email']);
   $id_siswa = $siswaaktif['id_siswa'];
 }
 
@@ -29,6 +26,8 @@ else
 <body>
 
   <?php include('layout/nav.php'); ?>
+
+
 
   <div class="container mt-3">
     <?php include('layout/page.php'); ?>

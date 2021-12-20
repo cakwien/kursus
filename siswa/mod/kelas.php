@@ -4,7 +4,7 @@ class kelas{
 
     function index($con,$id)
     {
-        $q=mysqli_query($con,"select * from kelas where id_kelas = $id");
+        $q=mysqli_query($con,"select * from kelas join kelas_utama on kelas.id_kelas_utama = kelas_utama.id_kelas_utama where kelas.id_kelas = $id");
         $dt = mysqli_fetch_array($q);
         return $dt;
     }
@@ -12,7 +12,7 @@ class kelas{
     function all($con,$id_siswa)
     {
         $list = array();
-        $q=mysqli_query($con,"select * from kelas_siswa join siswa on kelas_siswa.id_siswa = siswa.id_siswa join kelas on kelas_siswa.id_kelas = kelas.id_kelas where kelas_siswa.id_siswa = '$id_siswa'");
+        $q=mysqli_query($con,"select * from kelas_siswa join kelas on kelas_siswa.id_kelas = kelas.id_kelas join kelas_utama on kelas.id_kelas_utama = kelas_utama.id_kelas_utama where kelas_siswa.id_siswa = '$id_siswa'");
         while($dt = mysqli_fetch_array($q))
         {
             $list[] = $dt;
@@ -40,34 +40,28 @@ class kelas{
         //
     }
 
-    function status($sts)
+    function stsKelas($sts, $st1, $st2)
     {
-        if ($sts == 1)
+        if ($sts == "1")
         {
-            $ps = "Menunggu Pembayaran";
-        }else if ($sts == 2)
-        {
-            $ps = "Pending";
-        }else if ($sts == 3)
-        {
-            $ps = "Aktif";
+            return $st1;
         }else
         {
-            $ps = "Non Aktif";
+            return $st2;
         }
-        return $ps;
     }
 
     
 
 
 
-    // tampilkan kelas dan ampu guru untuk mengambil materi
+    
 
-    function mapelByAmpu($con,$id_kelas)
-    {
-        
-    }
+
+    //harga kelas
+
+    
+
 
 
 

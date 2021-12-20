@@ -19,6 +19,9 @@
     include('mod/siswa.php');
     $siswa = new siswa;
 
+    include('mod/tryout.php');
+    $tryout = new tryout;
+
     include('controller/tentor.php');
 
 ?>

@@ -17,36 +17,29 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi voluptatum eveniet, iure a corporis repellendus ab, optio, quos eaque quia! Dignissimos distinctio enim eos. Eligendi, quas ad. Debitis, repellendus.</p>
 
             <div class="row">
+
+               <?php
+               foreach($daftarkelasaktif as $dka)
+               {
+               ?>
+
+
                <div class="col-md-4">
                   <div class="card shadow-lg">
-                     <div class="card-body">
-                        <h5>1 Bulan</h5>
+                     <div class="card-body text-center">
+                        <h5><?=$dka['keterangan']?></h5>
+
+                        <h5><?=rp($dka['harga'])?></h5>
+
                         <div class="d-grid gap-2">
-                           <a href="#" class="btn rounded-pill text-light fs-5 fw-bold" style="background-color:orange;">Pilih</a>
+                           <a href="?p=konfirmasi&daftar=<?=rhs(rhs($dka['id_harga']))?>&ket<?=rhs($dka['keterangan'])?>" class="btn rounded-pill text-light fs-5 fw-bold" style="background-color:orange;">Pilih</a>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
-                  <div class="card shadow-lg">
-                     <div class="card-body">
-                        <h5>1 Bulan</h5>
-                        <div class="d-grid gap-2">
-                           <a href="#" class="btn rounded-pill text-light fs-5 fw-bold" style="background-color:orange;">Pilih</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="card shadow-lg">
-                     <div class="card-body">
-                        <h5>1 Tahun</h5>
-                        <div class="d-grid gap-2">
-                           <a href="#" class="btn rounded-pill text-light fs-5 fw-bold" style="background-color:orange;">Pilih</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+
+               <?php } ?>
+
             </div>
          </div>
       </div>

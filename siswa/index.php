@@ -16,6 +16,20 @@
     include('mod/materi.php');
     $materi = new materi;
 
+    include('mod/daftar.php');
+    $daftar = new daftar;
+
+    include('mod/tagihan.php');
+    $tagihan = new tagihan;
+
+    include('mod/harga.php');
+    $harga = new harga;
+
+    include('mod/pembayaran.php');
+    $pembayaran = new pembayaran;
+
+ 
+
 
     include('routing/routing.php');
 

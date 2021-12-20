@@ -1,5 +1,26 @@
 <?php
 
+
+function rhs($isi)
+{
+	$encode = base64_encode($isi);
+	return $encode;
+}
+
+function bukarhs($isi)
+{
+	$decode = base64_decode($isi);
+	return $decode;
+}
+
+function rp($angka)
+{
+
+	$hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.');
+	return $hasil_rupiah;
+}
+
+
    //TGLINDO
 function tgl_indo($time){
     $tanggal = date('Y-m-d', $time);
@@ -80,13 +101,17 @@ function cekwaktutbl($sekarang, $jadwal)
 {
 	$tenggang = $jadwal + 3600;
 
-	if ($sekarang > $jadwal) {
-		if ($sekarang <= $tenggang) {
+	if ($sekarang > $jadwal) 
+	{
+		if ($sekarang <= $tenggang) 
+		{
 			$sts = 'btn btn-sm btn-info';
-		} else {
+		} else 
+		{
 			$sts = 'btn btn-sm btn-secondary disabled';
 		}
-	} else {
+	} else 
+	{
 		$sts = 'btn btn-sm btn-warning disabled';
 	}
 	return $sts;

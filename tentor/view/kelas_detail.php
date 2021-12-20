@@ -27,7 +27,7 @@
                                     <a href="<?= $lm['link'] ?>" target="_blank" class="btn btn-sm btn-primary"><i class="bi-camera-video"></i></a>
                                     <!-- <a href="#" class="btn btn-sm btn-secondary"><i class="bi-three-dots"></i></a> -->
 
-                                    <button class="btn btn-sm btn-secondary float-end" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-sm btn-secondary float-end rounded-pill" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi-three-dots"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -62,6 +62,53 @@
     </div>
 </div>
 
+<div class="row mt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Jadwal Tryout
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-stripedb table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Modul Tryout</th>
+                            <th>Start</th>
+                            <th>Selesai</th>
+                            <th>Durasi</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                            $listtryout = $tryout->allbyclass($con,bukarhs($_GET['amp']));
+                            $no=1;
+                            foreach($listtryout as $to)
+                            {
+                            }
+                                
+                        ?>
+                        <tr>
+                            <td><?=$no?></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <span title="Progress Pengerjaan" class="btn btn-primary text-light btn-sm rounded-pill small"><i class="bi-person"></i>12 / 20</span>
+                                <a title="Lihat Hasil Pengerjaan" href="#" class="btn btn-success btn-sm rounded-pill"><i class="bi-newspaper"></i> Lihat Hasil</a>
+                            </td>
+                        </tr>
+
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="row">
     <div class="modal fade" id="daftarsiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
