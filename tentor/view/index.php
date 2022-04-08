@@ -14,7 +14,7 @@ $tnt = cekSession($con, $user);
   <link href="toastr.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-  <script type="javascript" src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <title>OsingCourse</title>
 </head>
 
@@ -95,25 +95,8 @@ $tnt = cekSession($con, $user);
   </script>
 
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#myModal').on('show.bs.modal', function(e) {
-        var rowid = $(e.relatedTarget).data('id');
-        //menggunakan fungsi ajax untuk pengambilan data
-        $.ajax({
-          type: 'post',
-          url: '?to=edit_materi',
-          data: 'rowid=' + rowid,
-          success: function(data) {
-            $('.fetched-data').html(data); //menampilkan data ke dalam modal
-          }
-        });
-      });
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="toastr.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">

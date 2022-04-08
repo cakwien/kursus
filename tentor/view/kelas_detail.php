@@ -32,7 +32,7 @@
                                         <i class="bi-three-dots"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item edit_data" relid="<?= $lm['id_materi'] ?>" data-bs-toggle="modal" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item" data-id="<?=$lm[0]?>" data-bs-toggle="modal" href="#editmateri">Edit</a></li>
                                         <li><a class="dropdown-item" href="?to=kelas&amp=<?= rhs($lm['id_ampu']) ?>&del=<?= $lm['id_materi'] ?>">Hapus</a>
                                         </li>
                                     </ul>
@@ -191,4 +191,44 @@
     </div>
 </div>
 
->
+<div class="modal fade" id="editmateri" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Materi Kursus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="post">
+                <div class="modal-body">
+                   <div class="modal-data"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi-x-circle"></i>
+                        Batal</button>
+                    <button type="submit" class="btn btn-primary"><i class="bi-save"></i> Simpan Schedule</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#editmateri').on('show.bs.modal', function(e) {
+            var rowid = $(e.relatedTarget).data('id');
+            //menggunakan fungsi ajax untuk pengambilan data
+            $.ajax({
+                type: 'post',
+                url: '?to=edit_materi',
+                data: 'rowid=' + rowid,
+                success: function(data) {
+                    $('.modal-data').html(data); //menampilkan data ke dalam modal
+                }
+            });
+        });
+    });
+</script>

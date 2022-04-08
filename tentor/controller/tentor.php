@@ -77,7 +77,7 @@
 
         elseif($p=="edit_materi")
         {
-            include('view/editmateri.php');
+            include('view/materi_edit.php');
         }
 
         elseif($p=="user")
