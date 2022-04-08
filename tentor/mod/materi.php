@@ -50,13 +50,20 @@
             $q=mysqli_query($con,"delete from materi where id_materi = '$id_materi'");
             if ($q)
             {
-                $ps="Schedule materi berhasil di tambahkan";
+                $ps="Schedule materi berhasil di hapus";
                 header('location:?to=kelas&amp='.rhs($id_ampu).'&ps='.rhs($ps));
             }else
             {
-                $ps="Schedule materi Gagal di tambahkan";
+                $ps="Schedule materi Gagal di hapus";
                 header('location:?to=kelas&amp='.rhs($id_ampu).'&pse='.rhs($ps));
             }
+        }
+
+        function index($con,$id_materi)
+        {
+            $q=mysqli_query($con,"select * from materi where id_materi = '$id_materi'");
+            $dt= mysqli_fetch_array($q);
+            return $dt;        
         }
     }
 

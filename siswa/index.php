@@ -25,6 +25,10 @@
     include('mod/harga.php');
     $harga = new harga;
 
+    include('mod/siswa.php');
+    $siswa = new siswa;
+    
+
     include('mod/pembayaran.php');
     $pembayaran = new pembayaran;
 

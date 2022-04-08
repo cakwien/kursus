@@ -14,6 +14,7 @@ $tnt = cekSession($con, $user);
   <link href="toastr.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+  <script type="javascript" src="https://code.jquery.com/jquery.js"></script>
   <title>OsingCourse</title>
 </head>
 
@@ -67,57 +68,44 @@ $tnt = cekSession($con, $user);
     <?php include('paging.php'); ?>
   </div>
 
-
-
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="fetched-data"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script>
-    toastr["success"]("Are you the six fingered man?");
+    window.setTimeout(function() {
+      $(".pesan").fadeTo(500, 0).slideUp(500, function() {
+        $(this).remove();
+      });
+    }, 5000);
   </script>
 
 
-  <script>
+  <script type="text/javascript">
     $(document).ready(function() {
-      toastr.options = {
-        "closeButton": false,
-        "debug": false,
-        "newestOnTop": false,
-        "progressBar": true,
-        "positionClass": "toast-top-right",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-      }
-    });
-  </script>
-
-
-  <script>
-    // ini menyiapkan dokumen agar siap grak :)
-    $(document).ready(function() {
-      // yang bawah ini bekerja jika tombol lihat data (class="view_data") di klik
-      $('.view_data').click(function() {
-        // membuat variabel id, nilainya dari attribut id pada button
-        // id="'.$row['id'].'" -> data id dari database ya sob, jadi dinamis nanti id nya
-        var id = $(this).attr("id");
-
-        // memulai ajax
+      $('#myModal').on('show.bs.modal', function(e) {
+        var rowid = $(e.relatedTarget).data('id');
+        //menggunakan fungsi ajax untuk pengambilan data
         $.ajax({
-          url: 'editmateri.php', // set url -> ini file yang menyimpan query tampil detail data siswa
-          method: 'post', // method -> metodenya pakai post. Tahu kan post? gak tahu? browsing aja :)
-          data: {
-            id: id
-          }, // nah ini datanya -> {id:id} = berarti menyimpan data post id yang nilainya dari = var id = $(this).attr("id");
-          success: function(data) { // kode dibawah ini jalan kalau sukses
-            $('#data_siswa').html(data); // mengisi konten dari -> <div class="modal-body" id="data_siswa">
-            $('#myModal').modal("show"); // menampilkan dialog modal nya
+          type: 'post',
+          url: '?to=edit_materi',
+          data: 'rowid=' + rowid,
+          success: function(data) {
+            $('.fetched-data').html(data); //menampilkan data ke dalam modal
           }
         });
       });
@@ -127,8 +115,11 @@ $tnt = cekSession($con, $user);
   <script src="toastr.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

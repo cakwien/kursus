@@ -23,7 +23,8 @@
                                 <div class="card-body ">
                                     <div class="fs-6 fw-bold"><?= $lm['judul'] ?></div>
                                     <div style="font-size:small" class="mb-2"><?= $lm['keterangan'] ?></div>
-                                    <div class="btn btn-sm btn-outline-success"><i class="bi-calendar"></i> <?= tgl_indo($lm['jadwal']) ?></div>
+                                    <div class="btn btn-sm btn-outline-success"><i class="bi-calendar"></i>
+                                        <?= tgl_indo($lm['jadwal']) ?></div>
                                     <a href="<?= $lm['link'] ?>" target="_blank" class="btn btn-sm btn-primary"><i class="bi-camera-video"></i></a>
                                     <!-- <a href="#" class="btn btn-sm btn-secondary"><i class="bi-three-dots"></i></a> -->
 
@@ -31,9 +32,12 @@
                                         <i class="bi-three-dots"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="view_data dropdown-item" data-bs-target="#myModal" id="<?=$lm['id_materi']?>" data-bs-toggle="modal" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item" href="?to=kelas&amp=<?= rhs($lm['id_ampu']) ?>&del=<?= $lm['id_materi'] ?>">Hapus</a></li>
+                                        <li><a class="dropdown-item edit_data" relid="<?= $lm['id_materi'] ?>" data-bs-toggle="modal" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item" href="?to=kelas&amp=<?= rhs($lm['id_ampu']) ?>&del=<?= $lm['id_materi'] ?>">Hapus</a>
+                                        </li>
                                     </ul>
+
+                                    <a href='#myModal' class='btn btn-default btn-small' id='custId' data-toggle='modal' data-id=".$row['id'].">Detail</a>
 
 
                                     <!-- <span class="btn btn-sm btn-danger rounded-circle float-end"><i class="fs-6 bi-check2-circle"></i></span>
@@ -62,7 +66,7 @@
     </div>
 </div>
 
-<div class="row mt-3">
+<!-- <div class="row mt-3">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
@@ -81,34 +85,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                            $listtryout = $tryout->allbyclass($con,bukarhs($_GET['amp']));
-                            $no=1;
-                            foreach($listtryout as $to)
-                            {
-                            }
-                                
-                        ?>
+
                         <tr>
-                            <td><?=$no?></td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td>
-                                <span title="Progress Pengerjaan" class="btn btn-primary text-light btn-sm rounded-pill small"><i class="bi-person"></i>12 / 20</span>
-                                <a title="Lihat Hasil Pengerjaan" href="#" class="btn btn-success btn-sm rounded-pill"><i class="bi-newspaper"></i> Lihat Hasil</a>
+                                <span title="Progress Pengerjaan"
+                                    class="btn btn-primary text-light btn-sm rounded-pill small"><i
+                                        class="bi-person"></i>12 / 20</span>
+                                <a title="Lihat Hasil Pengerjaan" href="#"
+                                    class="btn btn-success btn-sm rounded-pill"><i class="bi-newspaper"></i> Lihat
+                                    Hasil</a>
                             </td>
                         </tr>
 
-                        
+
 
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="row">
     <div class="modal fade" id="daftarsiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -128,13 +129,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($listsiswa as $sis) { ?>
+                            <?php
+                            $no = 1;
+                            foreach ($listsiswa as $sis) { ?>
                                 <tr>
-                                    <td></td>
+                                    <td><?= $no ?></td>
                                     <td><?= $sis['nm_siswa'] ?></td>
                                     <td><?= $sis['asal_sekolah'] ?></td>
                                 </tr>
-                            <?php } ?>
+                            <?php $no++;
+                            } ?>
 
                         </tbody>
                     </table>
@@ -176,7 +180,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi-x-circle"></i> Batal</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi-x-circle"></i>
+                            Batal</button>
                         <button type="submit" class="btn btn-primary"><i class="bi-save"></i> Simpan Schedule</button>
                     </div>
                 </form>
@@ -186,20 +191,4 @@
     </div>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Schedule Materi</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="data_siswa">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
+>

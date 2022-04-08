@@ -43,7 +43,7 @@
 
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-12 mt-2">
         <div class="card">
             <div class="card-header text-light" style="background-color:#00C1D4;">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="row mt-3 mb-3">
     <div class="col-md-6">
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
         <div class="card">
             <div class="card-header text-light" style="background-color:#B97A95;">
                 Schedule Kelas Privat
@@ -93,5 +93,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 

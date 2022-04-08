@@ -1,3 +1,20 @@
+<div class="row">
+    <div class="col-md-12">
+
+    <?php
+
+        if(!empty($_GET['ps']))
+        {
+            echo '<div class="alert alert-primary pesan" role="alert">'.bukarhs($_GET['ps']).'</div>';
+        }elseif(!empty($_GET['pse']))
+        {
+            echo '<div class="alert alert-danger pesan" role="alert">'.bukarhs($_GET['pse']).'</div>';
+        }
+
+    ?>
+    </div>
+</div>
+
 <?php
 
 if (!empty($p)) {

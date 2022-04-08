@@ -47,6 +47,9 @@ if (!empty($_GET['p'])) {
 
     elseif($p=="account")
     {
+        
+        
+        
         include('view/index.php');
     }
 
@@ -54,8 +57,6 @@ if (!empty($_GET['p'])) {
     {
 
         $daftarkelasaktif = $harga->allaktif($con); 
-        
-        
         include('view/index.php');
     }
 
@@ -63,8 +64,19 @@ if (!empty($_GET['p'])) {
     {
         if(!empty($_GET['daftar']))
         {
-            $idharga = bukarhs(bukarhs($_GET['daftar']));
-            $hargakelas = $harga->index($con,$idharga); // harga kelas
+            $idtarif = bukarhs(bukarhs($_GET['daftar']));
+            $hargakelas = $harga->index($con,$idtarif); // harga kelas
+        }
+
+        if (!empty($_GET['ok']) && !empty($_GET['kl']))
+        {
+            $id_siswa = $_GET['ok'];
+            $id_tarif = $_GET['kl'];
+            $time=time();
+            $time_limit = $time + 3600;
+            $status = 0;
+
+            $input=$tagihan->input($con, $id_siswa, $id_tarif, $time, $time_limit, $status);
         }
         
         include('view/index.php');
@@ -78,11 +90,11 @@ if (!empty($_GET['p'])) {
 
     elseif($p=="timelinekelas")
     {
-        if (!empty($_GET['kel']))
+        if (!empty($_GET['rombel']))
         {
-            $id_kelas = $_GET['kel'];
-            $datakelas = $kelas->index($con, $id_kelas);
-            $datatentor = $tentor->indexByKelas($con, $id_kelas);
+            $id_rombel = $_GET['rombel'];
+            $datakelas = $kelas->index($con, $id_rombel);
+            $datatentor = $tentor->indexByKelas($con, $id_rombel);
         }
 
         include('view/index.php');

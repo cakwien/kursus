@@ -48,6 +48,7 @@
                 $nm_kelas = $dt['nm_kelas'];
                 // $jenjang = $dt['jenjang'];
                 $listmateri = $materi->all($con,$id_ampu);
+                
                 $listsiswa = $siswa->allByAmpu($con,$id_ampu);
 
                 if (!empty($_POST['judul']))
@@ -74,7 +75,7 @@
             include('view/index.php');
         }
 
-        elseif($p=="editmateri")
+        elseif($p=="edit_materi")
         {
             include('view/editmateri.php');
         }

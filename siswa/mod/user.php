@@ -18,7 +18,7 @@ class user{
         }
     }
 
-    function index($con,$email) // Munculkan data siswa berdasarkan id siswa
+    function index($con,$email) // Munculkan data siswa berdasarkan email
     {
         $q=mysqli_query($con,"select * from siswa where email = '$email'");
         $dt = mysqli_fetch_array($q);

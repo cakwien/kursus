@@ -65,7 +65,7 @@
                                  </div>
                                  <div class="form-group">
                                     <label for="">Ulangi Password</label>
-                                    <input type="password" name="password2"  class="form-control">
+                                    <input type="password" name="password2" class="form-control">
                                  </div>
                               </div>
                            </div>

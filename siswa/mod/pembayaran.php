@@ -18,5 +18,7 @@ class pembayaran
       $jum = mysqli_num_rows($q);
       return $jum;
    }
+
+   
 }
 ?>

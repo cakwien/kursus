@@ -76,6 +76,20 @@ function disedit()
 	}
 	
 }
+function disedit2()
+{
+	if (!empty($_GET['edit'])){
+		if ($_GET['edit'] == "true") {
+			echo "date";
+		} else {
+			echo "text";
+		}
+	}else
+	{
+		echo "disabled";
+	}
+	
+}
 
 function cekwaktu($sekarang,$jadwal)
 {
@@ -118,3 +132,30 @@ function cekwaktutbl($sekarang, $jadwal)
 }
 
 
+
+
+function baliktgl($tgl)
+{
+	$tglint = strtotime($tgl);
+	$tglformat = tgl_indo($tglint);
+	return $tglformat;
+}
+
+function baliktgl2($tgl)
+{
+	$tglint = strtotime($tgl);
+	$tglformat = date('dd/mm/yyyy',$tglint);
+	return $tglformat;
+}
+
+function tanggal_account($tgl)
+{
+	$tglint = strtotime($tgl);
+	if(!empty($_GET['edit']))
+	{
+		if($_GET['edit'] ==  "true")
+		{
+			//
+		}
+	}
+}
