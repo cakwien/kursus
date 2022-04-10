@@ -35,7 +35,7 @@
 
         elseif ($p == "home")
         {
-            
+           
             include('view/index.php');
         }
 

@@ -15,7 +15,7 @@
         function terbaru($con,$id_tentor)
         {
             $list = array();
-            $q=mysqli_query($con,"Select * from materi join ampu on materi.id_ampu = ampu.id_ampu where ampu.id_tentor = '$id_tentor'");
+            $q=mysqli_query($con,"Select * from materi join ampu on materi.id_ampu = ampu.id_ampu join rombel on ampu.id_rombel = rombel.id_rombel join kelas on rombel.id_kelas = kelas.id_kelas where ampu.id_tentor = '$id_tentor'");
             while($dt=mysqli_fetch_array($q))
             {
                 $list[] = $dt;

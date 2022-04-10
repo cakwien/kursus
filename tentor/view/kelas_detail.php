@@ -28,16 +28,15 @@
                                     <a href="<?= $lm['link'] ?>" target="_blank" class="btn btn-sm btn-primary"><i class="bi-camera-video"></i></a>
                                     <!-- <a href="#" class="btn btn-sm btn-secondary"><i class="bi-three-dots"></i></a> -->
 
-                                    <button class="btn btn-sm btn-secondary float-end rounded-pill" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-sm btn-outline-secondary float-end" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi-three-dots"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" data-id="<?=$lm[0]?>" data-bs-toggle="modal" href="#editmateri">Edit</a></li>
+                                        <li><a class="dropdown-item" data-id="<?= $lm['id_materi'] ?>" data-bs-toggle="modal" href="#edit">Edit</a></li>
                                         <li><a class="dropdown-item" href="?to=kelas&amp=<?= rhs($lm['id_ampu']) ?>&del=<?= $lm['id_materi'] ?>">Hapus</a>
                                         </li>
                                     </ul>
 
-                                    <a href='#myModal' class='btn btn-default btn-small' id='custId' data-toggle='modal' data-id=".$row['id'].">Detail</a>
 
 
                                     <!-- <span class="btn btn-sm btn-danger rounded-circle float-end"><i class="fs-6 bi-check2-circle"></i></span>
@@ -66,50 +65,7 @@
     </div>
 </div>
 
-<!-- <div class="row mt-3">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                Jadwal Tryout
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered table-stripedb table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Modul Tryout</th>
-                            <th>Start</th>
-                            <th>Selesai</th>
-                            <th>Durasi</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <span title="Progress Pengerjaan"
-                                    class="btn btn-primary text-light btn-sm rounded-pill small"><i
-                                        class="bi-person"></i>12 / 20</span>
-                                <a title="Lihat Hasil Pengerjaan" href="#"
-                                    class="btn btn-success btn-sm rounded-pill"><i class="bi-newspaper"></i> Lihat
-                                    Hasil</a>
-                            </td>
-                        </tr>
-
-
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <div class="row">
     <div class="modal fade" id="daftarsiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -191,34 +147,37 @@
     </div>
 </div>
 
-<div class="modal fade" id="editmateri" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Materi Kursus</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Schedule</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="post">
                 <div class="modal-body">
-                   <div class="modal-data"></div>
+                    <div class="fetched-data"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi-x-circle"></i>
-                        Batal</button>
-                    <button type="submit" class="btn btn-primary"><i class="bi-save"></i> Simpan Schedule</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="update" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
+
+
+
+
 </div>
 
 
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#editmateri').on('show.bs.modal', function(e) {
+        $('#edit').on('show.bs.modal', function(e) {
             var rowid = $(e.relatedTarget).data('id');
             //menggunakan fungsi ajax untuk pengambilan data
             $.ajax({
@@ -226,7 +185,7 @@
                 url: '?to=edit_materi',
                 data: 'rowid=' + rowid,
                 success: function(data) {
-                    $('.modal-data').html(data); //menampilkan data ke dalam modal
+                    $('.fetched-data').html(data); //menampilkan data ke dalam modal
                 }
             });
         });

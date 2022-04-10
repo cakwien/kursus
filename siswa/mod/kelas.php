@@ -22,6 +22,13 @@ class kelas{
         return $list;
     }
 
+    function jumlahsiswa($con,$rombel)
+    {
+        $q=mysqli_query($con,"Select count(id_siswa) from kelas_siswa where id_rombel = '$rombel'");
+        $dt = mysqli_fetch_array($q);
+        return $dt[0];
+    }
+
     function cekKelasKursus($con,$id_siswa) // cek apakah siswa sudah pernah masuk kelas atau belum
     {
         $q=mysqli_query($con,"select * from kelas_siswa where id_siswa = '$id_siswa'");
