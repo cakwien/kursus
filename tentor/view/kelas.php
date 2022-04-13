@@ -49,15 +49,7 @@
           </div>
 
           <?php } ?>
-        <!-- info box -->
-
-        <!-- info box -->
-        
-        <!-- info box -->
-
-
-      
-        <!-- /.row -->
+ 
       </div>
       <!-- /.container-fluid -->
     </div>

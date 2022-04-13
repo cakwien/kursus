@@ -21,13 +21,15 @@ class tentor{
         if ($q)
         {
             $ps="Data Akun Tentor sudah diupdate";
-            header('location:?p=akun&ps='.rhs($ps));
+            header('location:?p=user&ps='.rhs($ps));
         }else
         {
             $ps="Gagal Update";
-            header('location:?p=akun&pse='.rhs($ps));
+            header('location:?p=user&pse='.rhs($ps));
         }
     }
+
+   
 }
 
 ?>

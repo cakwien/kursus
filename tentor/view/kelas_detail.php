@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
+        <div class="card shadow-sm">
             <div class="card-header">
                 Schedule Materi
                 <a href="#" data-bs-toggle="modal" data-bs-target="#tbschedule" class="btn btn-sm btn-primary float-end ms-1"><i class="bi-calendar2-plus"></i> Tambah Schedule</a>
@@ -36,23 +36,8 @@
                                         <li><a class="dropdown-item" href="?to=kelas&amp=<?= rhs($lm['id_ampu']) ?>&del=<?= $lm['id_materi'] ?>">Hapus</a>
                                         </li>
                                     </ul>
-
-
-
-                                    <!-- <span class="btn btn-sm btn-danger rounded-circle float-end"><i class="fs-6 bi-check2-circle"></i></span>
-                             <span class="btn btn-sm btn-warning rounded-circle float-end"><i class="fs-6 bi-check2-circle"></i></span> -->
-
-
-
                                 </div>
 
-
-
-                                <!-- <div class="card-footer">
-                                <a href="#" class="btn btn-sm btn-success"><i class="bi-pencil"></i></a>
-                                <a href="#" class="btn btn-sm btn-danger"><i class="bi-trash"></i></a>
-                                
-                            </div> -->
                             </div>
                         </div>
 
@@ -138,7 +123,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi-x-circle"></i>
                             Batal</button>
-                        <button type="submit" class="btn btn-primary"><i class="bi-save"></i> Simpan Schedule</button>
+                        <button type="submit" name="simpan" class="btn btn-primary"><i class="bi-save"></i> Simpan Schedule</button>
                     </div>
                 </form>
 

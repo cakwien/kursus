@@ -59,6 +59,20 @@
             }
         }
 
+        function update($con,$id_ampu,$judul,$ket,$link,$jadwal,$id)
+        {
+            $q=mysqli_query($con,"update materi set id_ampu = '$id_ampu', judul = '$judul', keterangan = '$ket', link = '$link', jadwal = '$jadwal' where id_materi = '$id'");
+            if ($q)
+            {
+                $ps="Schedule materi berhasil di update";
+                header('location:?to=kelas&amp='.rhs($id_ampu).'&ps='.rhs($ps));
+            }else
+            {
+                $ps="Schedule materi Gagal di update";
+                header('location:?to=kelas&amp='.rhs($id_ampu).'&pse='.rhs($ps));
+            }
+        }
+
         function index($con,$id_materi)
         {
             $q=mysqli_query($con,"select * from materi where id_materi = '$id_materi'");

@@ -1,17 +1,23 @@
 <div class="row">
     <div class="col-md-12">
 
-    <?php
+        <?php
 
-        if(!empty($_GET['ps']))
-        {
-            echo '<div class="alert alert-primary pesan" role="alert">'.bukarhs($_GET['ps']).'</div>';
-        }elseif(!empty($_GET['pse']))
-        {
-            echo '<div class="alert alert-danger pesan" role="alert">'.bukarhs($_GET['pse']).'</div>';
+        if (!empty($_GET['ps'])) {
+            echo "<script>Swal.fire(
+                    'Berhasil !',
+                    '".bukarhs($_GET['ps'])."',
+                    'success'
+                    )</script>";
+        } elseif (!empty($_GET['pse'])) {
+            echo "<script>Swal.fire(
+                    'Ups...',
+                     '" . bukarhs($_GET['pse']) . "',
+                    'error'
+                    )</script>";
         }
 
-    ?>
+        ?>
     </div>
 </div>
 

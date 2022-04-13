@@ -15,12 +15,12 @@
             <div class="form-group">
                 <label for="">Judul Materi</label>
                 <input type="text" name="judul" class="form-control" value="<?=$dt['judul']?>">
-                <input type="hidden" name="id_ampu" value="<?=$dt['id_ampu']?>">
+                <input type="text" name="id" class="form-control" value="<?=$dt['id_materi']?>">
             </div>
 
             <div class="form-group">
                 <label for="detail">Detail Materi</label>
-                <textarea name="isi_materi" class="form-control" rows="5"><?=$dt['keterangan']?></textarea>
+                <textarea name="ket" class="form-control" rows="5"><?=$dt['keterangan']?></textarea>
             </div>
 
             <div class="form-group">

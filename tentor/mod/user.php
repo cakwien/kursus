@@ -36,5 +36,30 @@ class user{
             header('location:?to=user&pse='.$ps);
         }
     }
+
+    function updatepass($con, $id_tentor, $passlama, $passbaru, $konfirmpassbaru)
+    {
+        $qcek = mysqli_query($con, "Select password from tentor where id_tentor = '$id_tentor'");
+        $dtcek = mysqli_fetch_array($qcek);
+
+        if (md5($passlama) == $dtcek[0]) {
+            if ($passbaru == $konfirmpassbaru) {
+                $q = mysqli_query($con, "update tentor set password = '$passbaru' where id_tentor = md5('$id_tentor')");
+                if ($q) {
+                    $ps = "Password berhasil di rubah";
+                    header('location:?to=user&ps=' . rhs($ps));
+                } else {
+                    $ps = "Gagal merubah password";
+                    header('location:?to=user&pse=' . rhs($ps));
+                }
+            } else {
+                $ps = "Konfirmasi password baru tidak cocok";
+                header('location:?to=user&pse=' . rhs($ps));
+            }
+        } else {
+            $ps = "Password Lama Salah";
+            header('location:?to=user&pse=' . rhs($ps));
+        }
+    }
 }
 ?>

@@ -14,7 +14,9 @@ $tnt = cekSession($con, $user);
   <link href="toastr.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
   <title>OsingCourse</title>
 </head>
 
@@ -84,6 +86,8 @@ $tnt = cekSession($con, $user);
       </div>
     </div>
   </div>
+
+
 
 
   <script>
